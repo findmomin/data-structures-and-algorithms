@@ -1,7 +1,7 @@
-// A function that accepts a sorted array of integers. The function
-// should find the first pair where the sum is 0. Return an array
-// that includes both values that sum to 0 or null if a pair doesn't
-// exist
+/* A function that accepts a sorted array of integers. The function
+  should find the first pair where the sum is 0. Return an array
+  that includes both values that sum to 0 or null if a pair doesn't
+  exist */
 const sumZero = (arr = []) => {
   let left = 0;
   let right = arr.length - 1;

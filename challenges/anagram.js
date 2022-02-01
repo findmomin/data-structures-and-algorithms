@@ -1,7 +1,7 @@
-// A function that accepts two strings. Returns true if the second
-// string is an anagram of the first
-// Note: An anagram is a word, phrase or name formed by rearranging
-// the letters of another word.
+/* A function that accepts two strings. Returns true if the second
+   string is an anagram of the first
+   Note: An anagram is a word, phrase or name formed by rearranging
+   the letters of another word. */
 const anagram = (str1 = '', str2 = '') => {
   const lookup = {};
 

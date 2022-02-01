@@ -1,5 +1,5 @@
-// A function that accepts a sorted array of numbers, and counts the
-// unique values in the array
+/* A function that accepts a sorted array of numbers, and counts the
+   unique values in the array */
 const countUniqueValues = (arr = []) => {
   if (!arr.length) return 0;
 
