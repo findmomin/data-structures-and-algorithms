@@ -42,6 +42,19 @@ class SinglyLinkedList {
 
     return current;
   }
+
+  shift() {
+    if (!this.length) return undefined;
+
+    const oldHead = this.head;
+
+    this.head = oldHead.next;
+    this.length--;
+
+    if (!this.length) this.tail = null;
+
+    return oldHead;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -52,9 +65,12 @@ list.push('world');
 list.push('Hi');
 
 // Pop
-list.pop();
+// list.pop();
 
 // Shift
+// list.shift();
+// list.shift();
+// list.shift();
 
 // Unshift
 
