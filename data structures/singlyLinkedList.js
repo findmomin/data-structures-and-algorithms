@@ -22,6 +22,26 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  pop() {
+    if (!this.length) return undefined;
+
+    let current = this.head;
+    let newTail = current;
+
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    if (this.length === 0) this.head = this.tail = null;
+
+    return current;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -32,6 +52,7 @@ list.push('world');
 list.push('Hi');
 
 // Pop
+list.pop();
 
 // Shift
 
