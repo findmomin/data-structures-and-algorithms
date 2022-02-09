@@ -69,14 +69,28 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  get(idx) {
+    if (idx < 0 || idx >= this.length) return null;
+
+    let counter = 0;
+    let currentNode = this.head;
+
+    while (counter !== idx) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+
+    return currentNode;
+  }
 }
 
 const list = new SinglyLinkedList();
 
 // Push
-// list.push('Hello');
-// list.push('world');
-// list.push('Hi');
+list.push('Hello');
+list.push('world');
+list.push('Hi');
 
 // Pop
 // list.pop();
@@ -88,5 +102,10 @@ const list = new SinglyLinkedList();
 
 // Unshift
 // list.unshift('First');
+
+// Get
+// console.log(list.get(2));
+
+// Set
 
 console.log(list);
