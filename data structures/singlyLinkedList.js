@@ -106,6 +106,19 @@ class SinglyLinkedList {
 
     return true;
   }
+
+  remove(idx) {
+    if (idx < 0 || idx >= this.length) return undefined;
+    if (idx === 0) return this.shift();
+    if (idx === this.length - 1) return this.pop();
+
+    const foundNode = this.get(idx - 1);
+    const removedNode = foundNode.next;
+    foundNode.next = removedNode.next;
+    this.length--;
+
+    return removedNode;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -133,9 +146,10 @@ list.push('Hi');
 // console.log(list.set(2, 'surprize'));
 
 // Insert
-console.log(list.insert(3, 'guys!'));
+// console.log(list.insert(3, 'guys!'));
 
 // Remove
+console.log(list.remove(2));
 
 // Reverse
 
