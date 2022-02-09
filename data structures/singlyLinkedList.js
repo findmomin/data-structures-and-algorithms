@@ -119,6 +119,24 @@ class SinglyLinkedList {
 
     return removedNode;
   }
+
+  reverse() {
+    let node = this.head;
+    let prev = null;
+    let next = null;
+
+    this.head = this.tail;
+    this.tail = node;
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+
+    return this;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -149,8 +167,9 @@ list.push('Hi');
 // console.log(list.insert(3, 'guys!'));
 
 // Remove
-console.log(list.remove(2));
+// console.log(list.remove(2));
 
 // Reverse
+list.reverse();
 
 console.log(list);
