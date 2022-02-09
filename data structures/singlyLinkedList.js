@@ -83,6 +83,14 @@ class SinglyLinkedList {
 
     return currentNode;
   }
+
+  set(idx, val) {
+    const foundNode = this.get(idx);
+
+    foundNode ? (foundNode.val = val) : null;
+
+    return !!foundNode;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -107,5 +115,6 @@ list.push('Hi');
 // console.log(list.get(2));
 
 // Set
+// console.log(list.set(2, 'surprize'));
 
 console.log(list);
