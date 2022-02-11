@@ -76,6 +76,22 @@ class DoublyLinkedList {
 
     return this;
   }
+
+  get(idx) {
+    if (idx < 0 || idx >= this.length) return null;
+
+    let count = idx <= this.length / 2 ? 0 : this.length - 1;
+    let foundNode = idx <= this.length / 2 ? this.head : this.tail;
+
+    while (count !== idx) {
+      idx <= this.length / 2
+        ? (foundNode = foundNode.next)
+        : (foundNode = foundNode.prev);
+      idx <= this.length / 2 ? count++ : count--;
+    }
+
+    return foundNode;
+  }
 }
 
 const list = new DoublyLinkedList();
@@ -91,6 +107,15 @@ list.push('World!');
 // console.log(list.shift());
 
 // Unshift
-console.log(list.unshift('first'));
+// console.log(list.unshift('first'));
+
+// Get
+console.log(list.get(1));
+
+// Set
+
+// Insert
+
+// Remove
 
 console.log(list);
