@@ -92,6 +92,14 @@ class DoublyLinkedList {
 
     return foundNode;
   }
+
+  set(idx, val) {
+    const foundNode = this.get(idx);
+
+    foundNode ? (foundNode.val = val) : null;
+
+    return !!foundNode;
+  }
 }
 
 const list = new DoublyLinkedList();
@@ -110,9 +118,10 @@ list.push('World!');
 // console.log(list.unshift('first'));
 
 // Get
-console.log(list.get(1));
+// console.log(list.get(1));
 
 // Set
+console.log(list.set(0, 'Bye,'));
 
 // Insert
 
