@@ -100,6 +100,25 @@ class DoublyLinkedList {
 
     return !!foundNode;
   }
+
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) return false;
+    if (idx === 0) return !!this.unshift(val);
+    if (idx === this.length) return !!this.push(val);
+
+    const newNode = new Node(val);
+    const beforeNode = this.get(idx - 1);
+    const afterNode = beforeNode.next;
+
+    beforeNode.next = newNode;
+    newNode.prev = beforeNode;
+    newNode.next = afterNode;
+    afterNode.prev = newNode;
+
+    this.length++;
+
+    return true;
+  }
 }
 
 const list = new DoublyLinkedList();
@@ -121,9 +140,10 @@ list.push('World!');
 // console.log(list.get(1));
 
 // Set
-console.log(list.set(0, 'Bye,'));
+// console.log(list.set(0, 'Bye,'));
 
 // Insert
+// console.log(list.insert(1, 'real'));
 
 // Remove
 
