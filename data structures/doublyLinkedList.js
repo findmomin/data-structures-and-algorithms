@@ -59,6 +59,23 @@ class DoublyLinkedList {
 
     return oldHead;
   }
+
+  unshift(val) {
+    const newNode = new Node(val);
+
+    if (!this.length) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+
+    this.length++;
+
+    return this;
+  }
 }
 
 const list = new DoublyLinkedList();
@@ -71,6 +88,9 @@ list.push('World!');
 // console.log(list.pop());
 
 // Shift
-console.log(list.shift());
+// console.log(list.shift());
+
+// Unshift
+console.log(list.unshift('first'));
 
 console.log(list);
