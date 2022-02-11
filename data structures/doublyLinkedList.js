@@ -119,6 +119,22 @@ class DoublyLinkedList {
 
     return true;
   }
+
+  remove(idx) {
+    if (idx < 0 || idx >= this.length) return undefined;
+    if (idx === 0) return this.shift();
+    if (idx === this.length - 1) return this.pop();
+
+    const removedNode = this.get(idx);
+
+    removedNode.next.prev = removedNode.prev;
+    removedNode.prev.next = removedNode.next;
+    removedNode.prev = removedNode.next = null;
+
+    this.length--;
+
+    return removedNode;
+  }
 }
 
 const list = new DoublyLinkedList();
@@ -146,5 +162,6 @@ list.push('World!');
 // console.log(list.insert(1, 'real'));
 
 // Remove
+console.log(list.remove(1));
 
 console.log(list);
