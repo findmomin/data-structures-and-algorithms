@@ -24,6 +24,19 @@ class Stack {
 
     return ++this.size;
   }
+
+  pop() {
+    if (!this.size) return null;
+
+    const temp = this.first;
+
+    if (this.size === 1) this.last = null;
+
+    this.first = this.first.next;
+    this.size--;
+
+    return temp.value;
+  }
 }
 
 const stack = new Stack();
@@ -31,5 +44,8 @@ const stack = new Stack();
 // Push
 console.log(stack.push('Hello'));
 console.log(stack.push('world'));
+
+// Pop
+console.log(stack.pop());
 
 console.log(stack);
