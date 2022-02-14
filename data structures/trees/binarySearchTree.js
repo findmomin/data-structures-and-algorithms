@@ -61,14 +61,14 @@ class BinarySearchTree {
 const tree = new BinarySearchTree();
 
 // Insert
-console.log(tree.insert(10));
-console.log(tree.insert(20));
-console.log(tree.insert(5));
-console.log(tree.insert(4));
-console.log(tree.insert(6));
-console.log(tree.insert(15));
+tree.insert(10);
+tree.insert(20);
+tree.insert(5);
+tree.insert(4);
+tree.insert(6);
+tree.insert(15);
 
 // Find
-console.log(tree.find(15));
+// console.log(tree.find(15));
 
 console.log(tree);
