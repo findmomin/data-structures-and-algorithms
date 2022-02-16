@@ -72,6 +72,10 @@ class BinarySearchTree {
 
     return result;
   }
+
+  depthFirstSearch() {
+    // 
+  }
 }
 
 const tree = new BinarySearchTree();
@@ -94,6 +98,9 @@ tree.insert(15);
 // console.log(tree.find(15));
 
 // Breadth first search (BFS)
-console.log(tree.breadthFirstSearch());
+// console.log(tree.breadthFirstSearch());
+
+// Depth first search (BFS)
+console.log(tree.depthFirstSearch());
 
 console.log(tree);
