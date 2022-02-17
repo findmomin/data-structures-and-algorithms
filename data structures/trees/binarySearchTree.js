@@ -100,7 +100,7 @@ tree.insert(15);
 // Breadth first search (BFS)
 // console.log(tree.breadthFirstSearch());
 
-// Depth first search (BFS)
+// Depth first search (DFS)
 console.log(tree.depthFirstSearch());
 
 console.log(tree);
