@@ -101,6 +101,6 @@ tree.insert(15);
 // console.log(tree.breadthFirstSearch());
 
 // Depth first search (DFS)
-console.log(tree.depthFirstSearch());
+// console.log(tree.depthFirstSearch());
 
 console.log(tree);
