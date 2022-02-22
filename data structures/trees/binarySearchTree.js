@@ -102,6 +102,22 @@ class BinarySearchTree {
 
     return result;
   }
+
+  depthFirstInOrder() {
+    const traverse = node => {
+      if (node.left) traverse(node.left);
+
+      result.push(node.value);
+
+      if (node.right) traverse(node.right);
+    };
+
+    const result = [];
+
+    traverse(this.root);
+
+    return result;
+  }
 }
 
 const tree = new BinarySearchTree();
@@ -130,6 +146,9 @@ tree.insert(15);
 // console.log(tree.depthFirstPreOrder());
 
 // Depth first post order
-console.log(tree.depthFirstPostOrder());
+// console.log(tree.depthFirstPostOrder());
+
+// Depth first in order
+// console.log(tree.depthFirstInOrder());
 
 console.log(tree);
