@@ -73,7 +73,19 @@ class BinarySearchTree {
     return result;
   }
 
-  depthFirstSearch() {
+  depthFirstPreOrder() {
+    const traverse = node => {
+      result.push(node.value);
+
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+
+    const result = [];
+
+    traverse(this.root);
+
+    return result;
     //
   }
 }
@@ -100,7 +112,7 @@ tree.insert(15);
 // Breadth first search (BFS)
 // console.log(tree.breadthFirstSearch());
 
-// Depth first search (DFS)
-// console.log(tree.depthFirstSearch());
+// Depth first pre order
+// console.log(tree.depthFirstPreOrder());
 
 console.log(tree);
