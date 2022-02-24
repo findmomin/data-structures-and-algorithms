@@ -1,5 +1,5 @@
 class HashTable {
-  constructor(size = 4) {
+  constructor(size = 53) {
     this.keyMap = new Array(size);
   }
 
@@ -28,20 +28,39 @@ class HashTable {
     for (let i = 0; i < this.keyMap[idx].length; i++)
       if (key === this.keyMap[idx][i][0]) return this.keyMap[idx][i][1];
   }
+
+  keys() {
+    const keys = [];
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (!this.keyMap[i]) continue;
+
+      for (let j = 0; j < this.keyMap[i].length; j++)
+        keys.push(this.keyMap[i][j][0]);
+    }
+
+    return keys;
+  }
 }
 
 const hashTable = new HashTable();
 
 // Set
-console.log(hashTable.set('cyan', 13));
-console.log(hashTable.set('pink', 20));
-console.log(hashTable.set('red', 30));
-console.log(hashTable.set('magenta', 35));
+hashTable.set('cyan', 13);
+hashTable.set('pink', 20);
+hashTable.set('red', 30);
+hashTable.set('magenta', 35);
 
 // Get
 // console.log(hashTable.get('cyan'));
 // console.log(hashTable.get('pink'));
 // console.log(hashTable.get('red'));
 // console.log(hashTable.get('magenta'));
+
+// Keys
+// console.log(hashTable.keys());
+
+// Values
+// console.log(hashTable.values());
 
 console.log(hashTable);
