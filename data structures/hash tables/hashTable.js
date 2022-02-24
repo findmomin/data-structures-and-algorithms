@@ -19,6 +19,15 @@ class HashTable {
 
     this.keyMap[idx] = [[key, val]];
   }
+
+  get(key) {
+    const idx = this._hash(key);
+
+    if (!this.keyMap[idx]) return undefined;
+
+    for (let i = 0; i < this.keyMap[idx].length; i++)
+      if (key === this.keyMap[idx][i][0]) return this.keyMap[idx][i][1];
+  }
 }
 
 const hashTable = new HashTable();
@@ -26,7 +35,13 @@ const hashTable = new HashTable();
 // Set
 console.log(hashTable.set('cyan', 13));
 console.log(hashTable.set('pink', 20));
-console.log(hashTable.set('red', 20));
-console.log(hashTable.set('magenta', 20));
+console.log(hashTable.set('red', 30));
+console.log(hashTable.set('magenta', 35));
+
+// Get
+// console.log(hashTable.get('cyan'));
+// console.log(hashTable.get('pink'));
+// console.log(hashTable.get('red'));
+// console.log(hashTable.get('magenta'));
 
 console.log(hashTable);
