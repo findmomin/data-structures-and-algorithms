@@ -11,6 +11,17 @@ class Graph {
     this.adjacencyList[vertex1].push(vertex2);
     this.adjacencyList[vertex2].push(vertex1);
   }
+
+  removeEdge(vertex1, vertex2) {
+    if (!this.adjacencyList[vertex1] || !this.adjacencyList[vertex2]) return;
+
+    this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
+      edge => edge !== vertex2
+    );
+    this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
+      edge => edge !== vertex1
+    );
+  }
 }
 
 const graph = new Graph();
@@ -25,4 +36,7 @@ console.log(graph.addEdge('BR', 'PUBG'));
 console.log(graph.addEdge('BR', 'Fortnite'));
 console.log(graph.addEdge('BRs', 'Fortnite'));
 
-console.log(graph);
+// Remove edge
+console.log(graph.removeEdge('BR', 'PUBG'));
+
+console.log(graph.adjacencyList);
