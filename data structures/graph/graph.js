@@ -22,6 +22,17 @@ class Graph {
       edge => edge !== vertex1
     );
   }
+
+  removeVertex(vertex) {
+    if (!this.adjacencyList[vertex]) return;
+
+    for (let key of this.adjacencyList[vertex])
+      this.adjacencyList[key] = this.adjacencyList[key].filter(
+        edge => edge !== vertex
+      );
+
+    delete this.adjacencyList[vertex];
+  }
 }
 
 const graph = new Graph();
@@ -30,13 +41,17 @@ const graph = new Graph();
 console.log(graph.addVertex('BR'));
 console.log(graph.addVertex('PUBG'));
 console.log(graph.addVertex('Fortnite'));
+console.log(graph.addVertex('Apex'));
 
 // Add edge
 console.log(graph.addEdge('BR', 'PUBG'));
 console.log(graph.addEdge('BR', 'Fortnite'));
-console.log(graph.addEdge('BRs', 'Fortnite'));
+console.log(graph.addEdge('BR', 'Apex'));
 
 // Remove edge
-console.log(graph.removeEdge('BR', 'PUBG'));
+// console.log(graph.removeEdge('BR', 'PUBG'));
+
+// Remove vertex
+console.log(graph.removeVertex('BR'));
 
 console.log(graph.adjacencyList);
