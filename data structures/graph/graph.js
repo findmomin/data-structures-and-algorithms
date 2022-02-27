@@ -53,6 +53,28 @@ class Graph {
 
     return result;
   }
+
+  breadthFirstSearch(start) {
+    const queue = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+
+    visited[start] = true;
+
+    while (queue.length) {
+      currentVertex = queue.shift();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach(neighbor =>
+        !visited[neighbor]
+          ? ((visited[neighbor] = true), queue.push(neighbor))
+          : undefined
+      );
+    }
+
+    return result;
+  }
 }
 
 const graph = new Graph();
@@ -75,6 +97,9 @@ console.log(graph.addEdge('BR', 'Apex'));
 // console.log(graph.removeVertex('BR'));
 
 // Depth first traverse (recursive)
-console.log(graph.depthFirstRecursive('BR'));
+// console.log(graph.depthFirstRecursive('BR'));
+
+// Breadth first traverse
+console.log(graph.breadthFirstSearch('BR'));
 
 console.log(graph.adjacencyList);
