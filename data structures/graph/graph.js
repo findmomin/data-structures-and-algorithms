@@ -33,6 +33,26 @@ class Graph {
 
     delete this.adjacencyList[vertex];
   }
+
+  depthFirstRecursive(start) {
+    const result = [];
+    const visited = {};
+
+    const dfs = vertex => {
+      if (!vertex) return;
+
+      visited[vertex] = true;
+      result.push(vertex);
+
+      this.adjacencyList[vertex].forEach(neighbor =>
+        !visited[neighbor] ? dfs(neighbor) : undefined
+      );
+    };
+
+    dfs(start);
+
+    return result;
+  }
 }
 
 const graph = new Graph();
@@ -52,6 +72,9 @@ console.log(graph.addEdge('BR', 'Apex'));
 // console.log(graph.removeEdge('BR', 'PUBG'));
 
 // Remove vertex
-console.log(graph.removeVertex('BR'));
+// console.log(graph.removeVertex('BR'));
+
+// Depth first traverse (recursive)
+console.log(graph.depthFirstRecursive('BR'));
 
 console.log(graph.adjacencyList);
