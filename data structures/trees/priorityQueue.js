@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class PriorityQueue {
+export class PriorityQueue {
   values = [];
 
   enqueue(val, priority) {
