@@ -100,6 +100,6 @@ console.log(graph.addEdge('BR', 'Apex'));
 // console.log(graph.depthFirstRecursive('BR'));
 
 // Breadth first traverse
-console.log(graph.breadthFirstSearch('BR'));
+// console.log(graph.breadthFirstSearch('BR'));
 
 console.log(graph.adjacencyList);
