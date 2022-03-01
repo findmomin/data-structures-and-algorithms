@@ -26,4 +26,4 @@ const fib = num => {
   return fibNums[num];
 };
 
-console.log(fib(100n));
+console.log(fib(10000n));
