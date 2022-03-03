@@ -14,3 +14,10 @@ console.log(indexOf([1, 2, 3, 4, 5], 4));
 
 // -1
 console.log(indexOf([1, 2, 3, 4, 5], 6));
+
+/* 
+  BigO:
+  Best: O(n)
+  Average: O(n)
+  Worst: O(n)
+*/

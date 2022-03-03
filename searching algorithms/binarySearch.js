@@ -24,3 +24,10 @@ console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 8));
 
 // -1
 console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 10));
+
+/* 
+  BigO:
+  Best: O(1)
+  Average: O(log n)
+  Worst: O(log n)
+*/
