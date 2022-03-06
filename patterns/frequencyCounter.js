@@ -1,7 +1,8 @@
 /* A function that accepts two arrays. The function should return
   true if every value in the array has it's corresponding value
   squared in the second array.
-  Note: The frequency of the values must be the same */
+  Note: The frequency of the values must be the same 
+*/
 const same = (arr1 = [1], arr2 = [1]) => {
   // If the length of the arrays are not the same return false
   if (arr1.length !== arr2.length) return false;

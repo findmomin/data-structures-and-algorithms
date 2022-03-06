@@ -1,7 +1,7 @@
 /* 
    A function that accepts an array of integers and returns the 
    sorted array in ascending order. 
- */
+*/
 const selectionSort = (arr = []) => {
   for (let i = 1; i < arr.length; i++) {
     const currentVal = arr[i];
