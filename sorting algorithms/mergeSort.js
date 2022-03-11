@@ -1,7 +1,7 @@
 /* 
    A function that accepts an array of integers and returns the 
    sorted array in ascending order. 
- */
+*/
 const merge = (arr1 = [], arr2 = []) => {
   let idxOne = 0;
   let idxTwo = 0;
