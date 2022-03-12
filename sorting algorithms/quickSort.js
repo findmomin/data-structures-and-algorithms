@@ -1,7 +1,7 @@
 /* 
    A function that accepts an array of integers and returns the 
    sorted array in ascending order. 
- */
+*/
 const pivot = (arr = [], start = 0, end = arr.length - 1) => {
   const pivot = arr[start];
   let swapIdx = start;
